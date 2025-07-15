@@ -1,0 +1,52 @@
+.linePattern {
+  position: relative;
+}
+
+.linePattern::before,
+.linePattern::after {
+  content: "";
+  z-index: 10;
+  width: 4.125rem;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.linePattern::before {
+  background: linear-gradient(230deg, #fff0, #f5c55a);
+  left: -20%;
+}
+
+.linePattern::after {
+  background: linear-gradient(90deg, #fff0, #f5c55a);
+  right: -40%;
+}
+
+@media (max-width: 768px) {
+  .linePattern {
+    max-width: 325px;
+    width: 352px;
+    position: relative;
+  }
+
+  .linePattern::before,
+  .linePattern::after {
+    width: 52px;
+  }
+
+  .linePattern::before {
+    left: 0;
+    transform: translate(0, -50%);
+  }
+
+  .linePattern::after {
+    right: 0;
+    transform: translate(0, -50%);
+  }
+}
+
+.gradientText {
+  color: transparent;
+  background-clip: text;
+} 
